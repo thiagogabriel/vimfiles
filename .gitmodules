@@ -88,3 +88,6 @@
 [submodule "bundle/bufkill"]
 	path = bundle/bufkill
 	url = https://github.com/vim-scripts/bufkill.vim
+[submodule "bundle/jellybeans"]
+  path = bundle/jellybeans
+  url = https://github.com/nanotech/jellybeans.vim
