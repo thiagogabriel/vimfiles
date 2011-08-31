@@ -81,8 +81,10 @@ au FileType python  set tabstop=4 textwidth=79
 set backspace=indent,eol,start
 
 " load the plugin and indent settings for the detected filetype
+
 filetype plugin indent on
 
+au! BufRead,BufNewFile *.json set filetype=json foldmethod=syntax 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
@@ -133,14 +135,3 @@ color desert
 
 command Notes e ~/.notes
 command Todo Ack TODO
-
-" force myself to use hjkl
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
-
