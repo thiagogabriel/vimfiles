@@ -91,3 +91,9 @@
 [submodule "bundle/jellybeans"]
   path = bundle/jellybeans
   url = https://github.com/nanotech/jellybeans.vim
+[submodule "bundle/mustang"]
+	path = bundle/mustang
+	url = https://github.com/cschlueter/vim-mustang.git
+[submodule "bundle/easymotion"]
+	path = bundle/easymotion
+	url = https://github.com/Lokaltog/vim-easymotion.git
