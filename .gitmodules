@@ -103,3 +103,9 @@
 [submodule "bundle/json"]
 	path = bundle/json
 	url = https://github.com/avakhov/vim-json.git
+[submodule "bundle/delmitmate"]
+	path = bundle/delmitmate
+	url = git://github.com/Raimondi/delimitMate.git
+[submodule "bundle/css-color"]
+	path = bundle/css-color
+	url = https://github.com/ap/vim-css-color.git
