@@ -1,7 +1,8 @@
 set nocompatible
 
-call pathogen#runtime_append_all_bundles() 
-call pathogen#helptags()
+call pathogen#infect()
+syntax on
+filetype plugin indent on
 
 set number
 set ruler
@@ -58,7 +59,7 @@ au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set f
 " Remember last location in file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal g'\"" | endif
+        \| exe "normal g'\"" | endif
 endif
 
 function s:setupWrapping()
@@ -130,25 +131,36 @@ map <leader>t :LustyFilesystemExplorer<cr>
 map <leader>b :LustyBufferExplorer<cr>
 map <leader>g :LustyBufferGrep<cr>
 
+" Presing jj get back to normal mode
+inoremap jj <esc>
+
 " Directories for swp files
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
+
+" Directories for snippets
+let g:UltiSnipsSnippetDirectories = ["snippets"]
 
 " Default color scheme
 
 set background=dark
 
 " Detect if we're running a 256 colors terminals
-  " PuTTY - putty-256color
-  " rxvt - rxvt-256color
-  " Eterm - Eterm-256color
-  " Konsole - konsole-256color
-  " XFCE's Terminal - gnome-256color
-  " more details here : http://vim.wikia.com/wiki/256_colors_in_vim
+" PuTTY - putty-256color
+" rxvt - rxvt-256color
+" Eterm - Eterm-256color
+" Konsole - konsole-256color
+" XFCE's Terminal - gnome-256color
+" more details here : http://vim.wikia.com/wiki/256_colors_in_vim
 if matchstr(&t_Co, '256')
-  color jellybeans
+  color herald
 else
   color desert
+endif
+
+" If we're under Ubuntu, adjust ack's command
+if !filereadable("/usr/bin/ack")
+  let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 endif
 
 command Notes e ~/.notes
