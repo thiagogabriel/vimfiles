@@ -3,21 +3,28 @@ set nocompatible
 call pathogen#infect()
 syntax on
 filetype plugin indent on
-
+set runtimepath+=~/.vim/bundle/ultisnips
 set number
 set ruler
 syntax on
 set encoding=utf-8
 set hidden
-let mapleader = "," 
+let mapleader = ","
+let g:EasyMotion_leader_key = '<Leader>m'
 set cursorline
 " Manage all my plugins through pathogen
-
 " Store lots of :cmdline history
 set history=1000
 " Store marks on up to 100 files
 set viminfo='100,f1
-
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a: :Tabularize /:\zs<CR>
+vmap <Leader>a: :Tabularize /:\zs<CR>
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:HammerQuiet=1
 " Whitespace stuff
 set wrap
 set scrolloff=3
@@ -47,8 +54,8 @@ au FileType make 	set noexpandtab
 
 " Status bar
 set laststatus=2
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-" set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('g:loaded_rvm')?rvm#statusline():''}%=%-16(\ %l,%c-%v\ %)%P
+" set statusline=%<%f\ %h%m%r%%=%-14.(%l,%c%V%)\ %P
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('g:loaded_rvm')?rvm#statusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 " Fix issues with the shell and fugitive
 set shell=bash
@@ -153,7 +160,7 @@ set background=dark
 " XFCE's Terminal - gnome-256color
 " more details here : http://vim.wikia.com/wiki/256_colors_in_vim
 if matchstr(&t_Co, '256')
-  color herald
+  color darkspectrum
 else
   color desert
 endif

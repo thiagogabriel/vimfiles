@@ -2,7 +2,7 @@
 set guioptions=aAc
 "set background=light
 
-color jellybeans
+color darkspectrum
 if has("gui_macvim")
   " Fullscreen takes up entire screen
 "  set fuoptions=maxhorz,maxvert
