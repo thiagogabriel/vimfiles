@@ -10,7 +10,6 @@ syntax on
 set encoding=utf-8
 set hidden
 let mapleader = ","
-let g:EasyMotion_leader_key = '<Leader>m'
 set cursorline
 " Manage all my plugins through pathogen
 " Store lots of :cmdline history
@@ -133,11 +132,10 @@ let macvim_hig_shift_movement = 1
 "spell check when writing commit logs
 autocmd filetype svn,*commit* set spell
 
-" LustyExplorer bindings
-map <leader>t :LustyFilesystemExplorer<cr>
-map <leader>b :LustyBufferExplorer<cr>
-map <leader>g :LustyBufferGrep<cr>
-
+let g:EasyMotion_leader_key = '<Leader>m'
+map <leader>t :CommandT<cr>
+map <leader>y :CommandTBuffer<cr>
+map <leader>g :Gstatus<cr>
 " Presing jj get back to normal mode
 inoremap jj <esc>
 
