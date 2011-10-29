@@ -158,7 +158,7 @@ set background=dark
 " XFCE's Terminal - gnome-256color
 " more details here : http://vim.wikia.com/wiki/256_colors_in_vim
 if matchstr(&t_Co, '256')
-  color darkspectrum
+  color Tomorrow-Night
 else
   color desert
 endif
