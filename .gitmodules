@@ -112,3 +112,6 @@
 [submodule "bundle/darkspectrum"]
 	path = bundle/darkspectrum
 	url = https://github.com/vim-scripts/darkspectrum.git
+[submodule "bundle/command-t"]
+	path = bundle/command-t
+	url = https://github.com/wincent/Command-T.git

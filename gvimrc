@@ -2,7 +2,7 @@
 set guioptions=aAc
 "set background=light
 
-color darkspectrum
+color Tomorrow-Night
 if has("gui_macvim")
   " Fullscreen takes up entire screen
 "  set fuoptions=maxhorz,maxvert
@@ -10,7 +10,7 @@ if has("gui_macvim")
   " Command-Return for fullscreen
   macmenu Window.Toggle\ Full\ Screen\ Mode key=<D-CR>
 
-  set guifont=Inconsolata:h14
+  set guifont=Monaco:h15
 elseif has("unix")
   set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
 end
