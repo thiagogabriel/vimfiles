@@ -16,6 +16,8 @@ set cursorline
 set history=1000
 " Store marks on up to 100 files
 set viminfo='100,f1
+map <Leader>] :call MakeGreen()<CR>
+autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
