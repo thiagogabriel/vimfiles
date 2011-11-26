@@ -33,7 +33,7 @@
 	url = https://github.com/tpope/vim-rake.git
 [submodule "bundle/rvm"]
 	path = bundle/rvm
-	url = https://github.com/csexton/rvm.vim.git
+	url = https://github.com/tpope/vim-rvm.git
 [submodule "bundle/ack"]
 	path = bundle/ack
 	url = https://github.com/mileszs/ack.vim.git
@@ -121,3 +121,6 @@
 [submodule "bundle/vim-makegreen"]
 	path = bundle/vim-makegreen
 	url = https://github.com/reinh/vim-makegreen.git
+[submodule "bundle/ruby"]
+	path = bundle/ruby
+	url = https://github.com/vim-ruby/vim-ruby.git
