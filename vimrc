@@ -16,16 +16,20 @@ set cursorline
 set history=1000
 " Store marks on up to 100 files
 set viminfo='100,f1
+highlight RSpecFailed guibg=#671d1a
 map <Leader>] :call MakeGreen()<CR>
 autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
+let g:SweetVimRspecUseBundler = 1
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:HammerQuiet=1
+let g:user_zen_expandabbr_key = '<tab>'
+let g:use_zen_complete_tag = 1
 " Whitespace stuff
 set wrap
 set scrolloff=3

@@ -126,4 +126,7 @@
 	url = https://github.com/vim-ruby/vim-ruby.git
 [submodule "bundle/sweet-rspec"]
 	path = bundle/sweet-rspec
-	url = https://github.com/sebastiangeiger/sweet-rspec-vim.git
+	url = https://github.com/ericdwhite/sweet-rspec-vim.git
+[submodule "bundle/zencoding"]
+	path = bundle/zencoding
+	url = https://github.com/mattn/zencoding-vim.git
