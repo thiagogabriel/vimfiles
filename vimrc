@@ -99,7 +99,7 @@ set backspace=indent,eol,start
 " load the plugin and indent settings for the detected filetype
 
 filetype plugin indent on
-
+set fdl=999
 au! BufRead,BufNewFile *.json set filetype=json foldmethod=syntax 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
