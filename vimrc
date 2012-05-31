@@ -1,5 +1,7 @@
 set nocompatible
 
+set clipboard=unnamed
+
 call pathogen#infect()
 syntax on
 filetype plugin indent on
@@ -176,3 +178,6 @@ endif
 
 command Notes e ~/.notes
 command Todo Ack TODO
+if has("mouse")
+  set mouse=a
+endif
