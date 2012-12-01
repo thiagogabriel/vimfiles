@@ -55,7 +55,7 @@ au FileType make 	set noexpandtab
 " Status bar
 set laststatus=2
 " set statusline=%<%f\ %h%m%r%%=%-14.(%l,%c%V%)\ %P
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('g:loaded_rvm')?rvm#statusline():''}%=%-16(\ %l,%c-%v\ %)%P
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('g:loaded_rvm')?rvm#statusline():''}%{fugitive#statusline()}%=%-16(\ %l,%c-%v\ %)%P
 
 " Fix issues with the shell and fugitive
 set shell=bash
