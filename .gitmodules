@@ -127,3 +127,12 @@
 [submodule "bundle/zencoding"]
 	path = bundle/zencoding
 	url = https://github.com/mattn/zencoding-vim.git
+[submodule "bundle/vimux"]
+	path = bundle/vimux
+	url = https://github.com/benmills/vimux.git
+[submodule "bundle/turbux"]
+	path = bundle/turbux
+	url = https://github.com/jgdavey/vim-turbux.git
+[submodule "bundle/tritium"]
+	path = bundle/tritium
+	url = git://github.com/tdesikan/vim-tritium.git
