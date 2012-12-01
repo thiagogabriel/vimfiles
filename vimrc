@@ -10,6 +10,9 @@ set number
 set ruler
 syntax on
 set encoding=utf-8
+"let g:html_indent_inctags = "body,head,tbody,ul,li,p,script"
+let g:html_indent_style1 = "inc"
+let g:html_indent_script1 = "inc"
 set hidden
 let mapleader = ","
 set cursorline
@@ -162,6 +165,7 @@ set background=dark
 " Konsole - konsole-256color
 " XFCE's Terminal - gnome-256color
 " more details here : http://vim.wikia.com/wiki/256_colors_in_vim
+set t_Co=256
 if matchstr(&t_Co, '256')
   color Tomorrow-Night
 else
@@ -178,3 +182,7 @@ command Todo Ack TODO
 if has("mouse")
   set mouse=a
 endif
+let g:no_turbux_mappings = 1
+map <leader>m <Plug>SendTestToTmux
+map <leader>M <Plug>SendFocusedTestToTmux
+let g:VimuxUseNearestPane = 1
