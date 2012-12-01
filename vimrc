@@ -27,6 +27,7 @@ autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
+vmap <Leader>a: :Tabularize /:\zs<CR>
 let g:SweetVimRspecUseBundler = 1
 let g:HammerQuiet=1
 " Whitespace stuff
