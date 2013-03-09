@@ -136,3 +136,18 @@
 [submodule "bundle/tritium"]
 	path = bundle/tritium
 	url = git://github.com/tdesikan/vim-tritium.git
+[submodule "bundle/screen"]
+	path = bundle/screen
+	url = git://github.com/ervandew/screen.git
+[submodule "bundle/ctrlp.vim"]
+	path = bundle/ctrlp.vim
+	url = git://github.com/kien/ctrlp.vim.git
+[submodule "bundle/vim-textobj-user"]
+	path = bundle/vim-textobj-user
+	url = git://github.com/kana/vim-textobj-user.git
+[submodule "bundle/vim-textobj-rubyblock"]
+	path = bundle/vim-textobj-rubyblock
+	url = git://github.com/nelstrom/vim-textobj-rubyblock.git
+[submodule "bundle/bundler"]
+	path = bundle/bundler
+	url = git://github.com/tpope/vim-bundler.git
