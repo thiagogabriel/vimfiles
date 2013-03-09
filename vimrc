@@ -179,9 +179,9 @@ if has("mouse")
   set mouse=a
 endif
 
-map <Leader>o :call RunCurrentLineInTest()<CR>
-map <Leader>p :call RunCurrentTest()<CR>
-map <Leader>d Obinding.pry<esc>:w<cr>
+"map <Leader>o :call RunCurrentLineInTest()<CR>
+"map <Leader>p :call RunCurrentTest()<CR>
+map <Leader>d obinding.pry<esc>:w<cr>
 map <Leader>gs :Gstatus<CR>
 map <Leader>f :call OpenFactoryFile()<CR>
 map <Leader>gc :Gcommit -m ""<LEFT>
@@ -192,6 +192,15 @@ set formatoptions-=or
 let g:CommandTMaxHeight=50
 let g:CommandTMatchWindowAtTop=1
 au BufWritePre *.rb :%s/\s\+$//e
+let g:ScreenImpl = 'Tmux'
+let g:ScreenShellTmuxInitArgs = '-2'
+let g:ScreenShellInitialFocus = 'shell'
+let g:ScreenShellQuitOnVimExit = 0
+command -nargs=? -complete=shellcmd W  :w | :call ScreenShellSend("load '".@%."';")
+map <Leader>c :ScreenShellVertical bundle exec rails c<CR>
+map <Leader>r :w<CR> :call ScreenShellSend("rspec ".@% . ':' . line('.'))<CR>
+"map <Leader>e :w<CR> :call ScreenShellSend("cucumber --format=pretty ".@% . ':' . line('.'))<CR>
+map <Leader>b :w<CR> :call ScreenShellSend("break ".@% . ':' . line('.'))<CR>
 
 function! OpenFactoryFile()
   if filereadable("test/factories.rb")
