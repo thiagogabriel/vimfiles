@@ -16,10 +16,7 @@ let g:html_indent_script1 = "inc"
 set hidden
 let mapleader = ","
 set cursorline
-" Manage all my plugins through pathogen
-" Store lots of :cmdline history
 set history=1000
-" Store marks on up to 100 files
 set viminfo='100,f1
 highlight RSpecFailed guibg=#671d1a
 map <Leader>] :call MakeGreen()<CR>
@@ -28,7 +25,6 @@ nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
-let g:SweetVimRspecUseBundler = 1
 let g:HammerQuiet=1
 " Whitespace stuff
 set wrap
@@ -168,12 +164,6 @@ else
   color desert
 endif
 
-" If we're under Ubuntu, adjust ack's command
-if !filereadable("/usr/bin/ack")
-  let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-endif
-
-command Notes e ~/.notes
 command Todo Ack TODO
 if has("mouse")
   set mouse=a
@@ -192,15 +182,6 @@ set formatoptions-=or
 let g:CommandTMaxHeight=50
 let g:CommandTMatchWindowAtTop=1
 au BufWritePre *.rb :%s/\s\+$//e
-let g:ScreenImpl = 'Tmux'
-let g:ScreenShellTmuxInitArgs = '-2'
-let g:ScreenShellInitialFocus = 'shell'
-let g:ScreenShellQuitOnVimExit = 0
-command -nargs=? -complete=shellcmd W  :w | :call ScreenShellSend("load '".@%."';")
-map <Leader>c :ScreenShellVertical bundle exec rails c<CR>
-map <Leader>r :w<CR> :call ScreenShellSend("rspec ".@% . ':' . line('.'))<CR>
-"map <Leader>e :w<CR> :call ScreenShellSend("cucumber --format=pretty ".@% . ':' . line('.'))<CR>
-map <Leader>b :w<CR> :call ScreenShellSend("break ".@% . ':' . line('.'))<CR>
 
 function! OpenFactoryFile()
   if filereadable("test/factories.rb")
@@ -222,60 +203,6 @@ function! RenameFile()
 endfunction
 map <leader>n :call RenameFile()<cr>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Test-running stuff
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! RunCurrentTest()
-  let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\|_test.rb\)$') != -1
-  if in_test_file
-    call SetTestFile()
-
-    if match(expand('%'), '\.feature$') != -1
-      call SetTestRunner("!cucumber")
-      exec g:bjo_test_runner g:bjo_test_file
-    elseif match(expand('%'), '_spec\.rb$') != -1
-      call SetTestRunner("!rspec")
-      exec g:bjo_test_runner g:bjo_test_file
-    else
-      call SetTestRunner("!ruby -Itest")
-      exec g:bjo_test_runner g:bjo_test_file
-    endif
-  else
-    exec g:bjo_test_runner g:bjo_test_file
-  endif
-endfunction
-
-function! SetTestRunner(runner)
-  let g:bjo_test_runner=a:runner
-endfunction
-
-function! RunCurrentLineInTest()
-
-  let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\|_test.rb\)$') != -1
-  if in_test_file
-    call SetTestFileWithLine()
-  end
-
-  exec "!rspec" g:bjo_test_file . ":" . g:bjo_test_file_line
-endfunction
-
-function! SetTestFile()
-  let g:bjo_test_file=@%
-endfunction
-
-function! SetTestFileWithLine()
-  let g:bjo_test_file=@%
-  let g:bjo_test_file_line=line(".")
-endfunction
-
-function! CorrectTestRunner()
-  if match(expand('%'), '\.feature$') != -1
-    return "cucumber"
-  elseif match(expand('%'), '_spec\.rb$') != -1
-    return "rspec"
-  else
-    return "ruby"
-  endif
-endfunction
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <leader>R :call RunRspecCurrentFileConque()<CR>
+map <leader>r :call RunRspecCurrentLineConque()<CR>
+let delimitMate_expand_space = 1

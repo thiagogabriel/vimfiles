@@ -43,9 +43,6 @@
 [submodule "bundle/gist"]
 	path = bundle/gist
 	url = https://github.com/mattn/gist-vim.git
-[submodule "bundle/rspec"]
-	path = bundle/rspec
-	url = https://github.com/brentmc79/vim-rspec.git
 [submodule "bundle/coffee-script"]
 	path = bundle/coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
@@ -121,9 +118,6 @@
 [submodule "bundle/ruby"]
 	path = bundle/ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
-[submodule "bundle/sweet-rspec"]
-	path = bundle/sweet-rspec
-	url = https://github.com/ericdwhite/sweet-rspec-vim.git
 [submodule "bundle/zencoding"]
 	path = bundle/zencoding
 	url = https://github.com/mattn/zencoding-vim.git
@@ -151,3 +145,15 @@
 [submodule "bundle/bundler"]
 	path = bundle/bundler
 	url = git://github.com/tpope/vim-bundler.git
+[submodule "bundle/scmdiff"]
+	path = bundle/scmdiff
+	url = git://github.com/ghewgill/vim-scmdiff.git
+[submodule "bundle/conque-term"]
+	path = bundle/conque-term
+	url = git://github.com/dhazel/conque-term.git
+[submodule "bundle/ruby-conque"]
+	path = bundle/ruby-conque
+	url = git://github.com/skwp/vim-ruby-conque.git
+[submodule "bundle/haml"]
+	path = bundle/haml
+	url = git://github.com/tpope/vim-haml.git
