@@ -130,8 +130,6 @@ let macvim_hig_shift_movement = 1
 autocmd filetype svn,*commit* set spell
 
 let g:EasyMotion_leader_key = '<Leader>m'
-map <leader>t :CommandT<cr>
-map <leader>y :CommandTBuffer<cr>
 map <leader>g :Gstatus<cr>
 " Presing jj get back to normal mode
 inoremap jj <esc>
@@ -179,8 +177,6 @@ let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;
 set shiftround " When at 3 spaces and I hit >>, go to 4, not 5.
 set nofoldenable " Say no to code folding...
 set formatoptions-=or
-let g:CommandTMaxHeight=50
-let g:CommandTMatchWindowAtTop=1
 au BufWritePre *.rb :%s/\s\+$//e
 
 function! OpenFactoryFile()
