@@ -148,3 +148,9 @@
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = git://github.com/majutsushi/tagbar
+[submodule "bundle/switch"]
+	path = bundle/switch
+	url = git://github.com/AndrewRadev/switch.vim.git
+[submodule "bundle/vimroom"]
+	path = bundle/vimroom
+	url = git://github.com/mikewest/vimroom.git
