@@ -5,7 +5,6 @@ set clipboard=unnamed
 call pathogen#infect()
 syntax on
 filetype plugin indent on
-set runtimepath+=~/.vim/bundle/ultisnips
 set number
 set ruler
 syntax on
@@ -107,8 +106,6 @@ nmap <C-J> ]e
 vmap <C-K> [egv
 vmap <C-J> ]egv
 
-" ZoomWin 
-map <Leader><Leader> :ZoomWin<CR>
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
@@ -129,7 +126,7 @@ let macvim_hig_shift_movement = 1
 "spell check when writing commit logs
 autocmd filetype svn,*commit* set spell
 
-let g:EasyMotion_leader_key = '<Leader>m'
+map <leader>t :CtrlP<cr>
 map <leader>g :Gstatus<cr>
 " Presing jj get back to normal mode
 inoremap jj <esc>
@@ -138,12 +135,6 @@ inoremap jj <esc>
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 
-" Directories for snippets
-let g:UltiSnipsSnippetsDir = "~/.vim/bundle/ultisnips/UltiSnips"
-
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " Default color scheme
 
 set background=dark
@@ -202,3 +193,10 @@ map <leader>n :call RenameFile()<cr>
 map <leader>R :call RunRspecCurrentFileConque()<CR>
 map <leader>r :call RunRspecCurrentLineConque()<CR>
 let delimitMate_expand_space = 1
+nnoremap - :Switch<cr>
+let g:ctrlp_switch_buffer = 'ET'
+let g:ctrlp_mruf_relative = 1
+" Insert CRs with ease
+nmap <Return> o<Esc>
+" Clean search
+map //  :nohlsearch<CR>
