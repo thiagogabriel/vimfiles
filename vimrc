@@ -2,7 +2,6 @@ set nocompatible
 
 set clipboard=unnamed
 
-call pathogen#infect()
 syntax on
 filetype plugin indent on
 set number
