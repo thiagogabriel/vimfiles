@@ -48,7 +48,9 @@ Bundle 'kana/vim-textobj-user'
 Bundle 'mikewest/vimroom'
 Bundle 'mattn/zencoding-vim'
 Bundle 'airblade/vim-gitgutter'
-
+Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/neosnippet'
+Bundle 'honza/vim-snippets'
 filetype plugin indent on
 set number
 set ruler
@@ -61,6 +63,7 @@ set hidden
 let mapleader = ","
 set cursorline
 set history=1000
+set timeoutlen=250
 set viminfo='100,f1
 highlight RSpecFailed guibg=#671d1a
 map <Leader>] :call MakeGreen()<CR>
@@ -165,11 +168,6 @@ endif
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
 
-" MacVIM shift+arrow-keys behavior (required in .vimrc)
-let macvim_hig_shift_movement = 1
-
-"spell check when writing commit logs
-autocmd filetype svn,*commit* set spell
 
 map <leader>t :CtrlP<cr>
 map <leader>g :Gstatus<cr>
@@ -242,6 +240,29 @@ nnoremap - :Switch<cr>
 let g:ctrlp_switch_buffer = 'ET'
 let g:ctrlp_mruf_relative = 1
 " Insert CRs with ease
-nmap <Return> o<Esc>
+" nmap <Return> o<Esc>
 " Clean search
 map //  :nohlsearch<CR>
+" autocomplete
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+" Enable neosnippet snipmate compatibility mode
+let g:neosnippet#enable_snipmate_compatibility = 1
+" Launches neocomplcache automatically on vim startup.
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Use camel case completion.
+let g:neocomplcache_enable_camel_case_completion = 1
+" Use underscore completion.
+let g:neocomplcache_enable_underbar_completion = 1
+" Sets minimum char length of syntax keyword.
+let g:neocomplcache_min_syntax_length = 3
+" SuperTab like snippets behavior.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
