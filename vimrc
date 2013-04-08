@@ -99,8 +99,8 @@ au! BufRead,BufNewFile *.json set filetype=json foldmethod=syntax
 " Normal mode: <Leader>e
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
-" CTags
-map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
+" Generate CTags for every gem included in the Gemfile.
+map <silent> <Leader>rt :!bundle list --paths=true \| xargs ctags --extra=+f --exclude=.git --exclude=log -R *<CR><CR> 
 
 " Unimpaired configuration
 " Bubble single lines
