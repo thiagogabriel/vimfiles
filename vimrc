@@ -146,7 +146,7 @@ set background=dark
 " more details here : http://vim.wikia.com/wiki/256_colors_in_vim
 set t_Co=256
 if matchstr(&t_Co, '256')
-  color Tomorrow-Night
+  color tomorrow-night
 else
   color desert
 endif
