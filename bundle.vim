@@ -2,7 +2,7 @@
 " required! 
 Bundle 'gmarik/vundle'
 
-Bundle 'mileszs/ack.vim'
+Bundle 'rking/ag.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'dhazel/conque-term'
 Bundle 'kien/ctrlp.vim'
@@ -46,3 +46,4 @@ Bundle 'Shougo/neosnippet'
 Bundle 'honza/vim-snippets'
 Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-bundler'
+Bundle 'FredKSchott/CoVim'
