@@ -106,13 +106,13 @@ set backspace=indent,eol,start
 
 filetype plugin indent on
 set fdl=999
-au! BufRead,BufNewFile *.json set filetype=json foldmethod=syntax 
+au! BufRead,BufNewFile *.json set filetype=json foldmethod=syntax
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 " Generate CTags for every gem included in the Gemfile.
-map <silent> <Leader>rt :!bundle list --paths=true \| xargs ctags --extra=+f --exclude=.git --exclude=log -R *<CR><CR> 
+map <silent> <Leader>rt :!bundle list --paths=true \| xargs ctags --extra=+f --exclude=.git --exclude=log -R *<CR><CR>
 
 " Unimpaired configuration
 " Bubble single lines
@@ -192,11 +192,11 @@ endfunction
 " RENAME CURRENT FILE (thanks Gary Bernhardt) modified to use gitmove
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! RenameFile()
-    let old_name = expand('%')
-    let new_name = input('New file name: ', expand('%'), 'file')
-    if new_name != '' && new_name != old_name
-        exec ':Gmove ' . new_name
-    endif
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'), 'file')
+  if new_name != '' && new_name != old_name
+    exec ':Gmove ' . new_name
+  endif
 endfunction
 map <leader>n :call RenameFile()<cr>
 
