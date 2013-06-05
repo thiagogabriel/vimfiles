@@ -140,6 +140,7 @@ map <leader>t :CtrlP<cr>
 map <leader>g :Gstatus<cr>
 " Presing jj get back to normal mode
 inoremap jj <esc>
+inoremap jk <esc>
 
 " Directories for swp files
 set backupdir=~/.vim/backup
