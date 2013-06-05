@@ -234,3 +234,12 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expan
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
+
+" easier redo
+noremap U <C-r>
+" convert hash rocket to 1.9 hash syntax
+nmap <leader>hr mm:s/\v:(\w+) \=\>/\1:/g<CR>`m
+" strip trailing whitespace
+nnoremap <silent> <leader><space> mm:%s/\s\+$//e<CR>`m
+" auto indent whole file
+nnoremap <silent> <leader>= mmgg=G`m
