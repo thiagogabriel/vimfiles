@@ -58,6 +58,8 @@ noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
+nnoremap ; :
+
 " make uses real tabs
 au FileType make 	set noexpandtab
 
