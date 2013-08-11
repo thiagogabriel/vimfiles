@@ -243,3 +243,5 @@ nmap <leader>hr mm:s/\v:(\w+) \=\>/\1:/g<CR>`m
 nnoremap <silent> <leader><space> mm:%s/\s\+$//e<CR>`m
 " auto indent whole file
 nnoremap <silent> <leader>= mmgg=G`m
+nmap sj :SplitjoinSplit<cr>
+nmap sk :SplitjoinJoin<cr>
