@@ -201,8 +201,6 @@ function! RenameFile()
 endfunction
 map <leader>n :call RenameFile()<cr>
 
-map <leader>R :call RunRspecCurrentFileConque()<CR>
-map <leader>r :call RunRspecCurrentLineConque()<CR>
 let delimitMate_expand_space = 1
 nnoremap - :Switch<cr>
 let g:ctrlp_switch_buffer = 'ET'
