@@ -210,6 +210,9 @@ let g:ctrlp_mruf_relative = 1
 " Clean search
 map //  :nohlsearch<CR>
 
+map <Leader>R :call RunCurrentSpecFile()<CR>
+map <Leader>r :call RunNearestSpec()<CR>
+map <Leader>rr :call RunLastSpec()<CR>
 
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_seed_identifiers_with_syntax = 1
