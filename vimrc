@@ -134,6 +134,7 @@ elseif has("unix")
 endif
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
+let g:github_user = 'lunks'
 
 
 map <leader>t :CtrlP<cr>
@@ -216,6 +217,8 @@ map <Leader>rr :call RunLastSpec()<CR>
 
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_seed_identifiers_with_syntax = 1
+
+
 
 " easier redo
 noremap U <C-r>
