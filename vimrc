@@ -8,7 +8,7 @@ call vundle#rc()
 so ~/.vim/bundle.vim
 
 filetype plugin indent on
-set number
+set nonumber
 set ruler
 syntax on
 set encoding=utf-8
@@ -28,6 +28,7 @@ nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
+let g:rspec_command = "MakeGreen {spec}"
 let g:HammerQuiet=1
 " Whitespace stuff
 set wrap
@@ -37,6 +38,7 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set list listchars=tab:\ \ ,trail:·
+let &sbr=nr2char(8618).' '
 
 " Searching
 set hlsearch
@@ -58,8 +60,6 @@ noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
-nnoremap ; :
-
 " make uses real tabs
 au FileType make 	set noexpandtab
 
@@ -73,6 +73,9 @@ set shell=bash
 
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Guardfile,Procfile,config.ru}    set ft=ruby
+
+" Recognize .int as yaml
+au BufRead,BufNewFile {.int}    set ft=yaml
 
 " Remember last location in file
 if has("autocmd")
@@ -137,11 +140,17 @@ let g:gist_open_browser_after_post = 1
 let g:github_user = 'lunks'
 
 
+" toggle between last open buffers
+nnoremap <leader><leader> <c-^>
+
 map <leader>t :CtrlP<cr>
 map <leader>g :Gstatus<cr>
 " Presing jj get back to normal mode
 inoremap jj <esc>
 inoremap jk <esc>
+
+"Rd will delete the line and keep the unnamed register untouched
+nnoremap R "_d
 
 " Directories for swp files
 set backupdir=~/.vim/backup
@@ -215,7 +224,6 @@ map <Leader>R :call RunCurrentSpecFile()<CR>
 map <Leader>r :call RunNearestSpec()<CR>
 map <Leader>rr :call RunLastSpec()<CR>
 
-let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_seed_identifiers_with_syntax = 1
 
 
@@ -230,3 +238,4 @@ nnoremap <silent> <leader><space> mm:%s/\s\+$//e<CR>`m
 nnoremap <silent> <leader>= mmgg=G`m
 nmap sj :SplitjoinSplit<cr>
 nmap sk :SplitjoinJoin<cr>
+nmap <Leader>a :Ag<space>
