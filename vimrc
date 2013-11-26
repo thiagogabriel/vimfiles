@@ -239,3 +239,10 @@ nnoremap <silent> <leader>= mmgg=G`m
 nmap sj :SplitjoinSplit<cr>
 nmap sk :SplitjoinJoin<cr>
 nmap <Leader>a :Ag<space>
+function! PasteAsCoffee()
+  :read !pbpaste | /usr/local/share/npm/bin/js2coffee
+endfunction
+
+:command! PasteAsCoffee :call PasteAsCoffee()
+:map <leader>pc :PasteAsCoffee<CR>
+let g:PreserveNoEOL = 1
