@@ -8,7 +8,7 @@ call vundle#rc()
 so ~/.vim/bundle.vim
 
 filetype plugin indent on
-set nonumber
+set number
 set ruler
 syntax on
 set encoding=utf-8
@@ -114,8 +114,11 @@ au! BufRead,BufNewFile *.json set filetype=json foldmethod=syntax
 " Normal mode: <Leader>e
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
+" Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
+let g:Tlist_Ctags_Cmd="/usr/local/bin/ctags --exclude='*.js'"
+
 " Generate CTags for every gem included in the Gemfile.
-map <silent> <Leader>rt :!bundle list --paths=true \| xargs ctags --extra=+f --exclude=.git --exclude=log -R *<CR><CR>
+map <silent> <Leader>rt :!bundle list --paths=true \| xargs /usr/local/bin/ctags --extra=+f --exclude=.git --exclude=log -R *<CR><CR>
 
 " Unimpaired configuration
 " Bubble single lines
@@ -128,16 +131,6 @@ vmap <C-J> ]egv
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
-
-" gist-vim defaults
-if has("mac")
-  let g:gist_clip_command = 'pbcopy'
-elseif has("unix")
-  let g:gist_clip_command = 'xclip -selection clipboard'
-endif
-let g:gist_detect_filetype = 1
-let g:gist_open_browser_after_post = 1
-let g:github_user = 'lunks'
 
 
 " toggle between last open buffers
