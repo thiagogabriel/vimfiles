@@ -114,11 +114,8 @@ au! BufRead,BufNewFile *.json set filetype=json foldmethod=syntax
 " Normal mode: <Leader>e
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
-" Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
-let g:Tlist_Ctags_Cmd="/usr/local/bin/ctags --exclude='*.js'"
-
 " Generate CTags for every gem included in the Gemfile.
-map <silent> <Leader>rt :!bundle list --paths=true \| xargs /usr/local/bin/ctags --extra=+f --exclude=.git --exclude=log -R *<CR><CR>
+map <silent> <Leader>rt :!bundle list --paths=true \| xargs /usr/local/bin/ctags --extra=+f --exclude=*.js --exclude=*.coffee --exclude=*.html --exclude=.git --exclude=log -R *<CR><CR>
 
 " Unimpaired configuration
 " Bubble single lines
