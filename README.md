@@ -2,7 +2,7 @@ Installation
 ============
 
 Clone the repo:
-`git clone https://github.com/lunks/vimfiles.git ~/.vim`
+`git clone https://github.com/thiagogabriel/vimfiles.git ~/.vim`
 
 Grab Vundle:
 `git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle`
