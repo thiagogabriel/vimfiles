@@ -129,6 +129,8 @@ vmap <C-J> ]egv
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
 
+" Redefine emmet trigger key
+let g:user_emmet_leader_key='<c-e>'
 
 " toggle between last open buffers
 nnoremap <leader><leader> <c-^>
