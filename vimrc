@@ -60,6 +60,12 @@ noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
+" Ajust focused window size when splitted
+set winwidth=84
+set winheight=5
+set winminheight=5
+set winheight=999
+
 " make uses real tabs
 au FileType make 	set noexpandtab
 
