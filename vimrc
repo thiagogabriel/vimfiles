@@ -22,13 +22,12 @@ set history=1000
 set timeoutlen=250
 set viminfo='100,f1
 highlight RSpecFailed guibg=#671d1a
-map <Leader>] :call MakeGreen()<CR>
 autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
-let g:rspec_command = "MakeGreen {spec}"
+let g:rspec_command = "!bundle exec rspec {spec}"
 let g:HammerQuiet=1
 " Whitespace stuff
 set wrap
