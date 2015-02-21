@@ -27,7 +27,7 @@ nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
-let g:rspec_command = "!bundle exec rspec {spec}"
+let g:rspec_command = "!rspec {spec}"
 let g:HammerQuiet=1
 " Whitespace stuff
 set wrap
@@ -243,3 +243,11 @@ endfunction
 :command! PasteAsCoffee :call PasteAsCoffee()
 :map <leader>pc :PasteAsCoffee<CR>
 let g:PreserveNoEOL = 1
+
+
+" ##### NERDTree  {{{
+noremap <leader>ft :NERDTreeToggle<CR>
+
+" Don't fuck up vim's default file browser
+let g:NERDTreeHijackNetrw = 0
+" }}}
